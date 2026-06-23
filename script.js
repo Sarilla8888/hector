@@ -1,0 +1,10 @@
+const botonNo = document.getElementById("no");
+
+botonNo.addEventListener("mouseenter", () => {
+    const x = Math.random() * (window.innerWidth - botonNo.offsetWidth);
+    const y = Math.random() * (window.innerHeight - botonNo.offsetHeight);
+
+    botonNo.style.position = "absolute";
+    botonNo.style.left = x + "px";
+    botonNo.style.top = y + "px";
+});
