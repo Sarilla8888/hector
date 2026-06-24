@@ -6,52 +6,65 @@
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #ffffff;
+    overflow-x: hidden;
+    padding: 20px;
 }
 
 .card{
-    width: 925px;
-    height: 489px;
-    background-image: url(img/7.png);
+    width: min(925px, 95vw);
+    aspect-ratio: 925 / 489;
+
+    background-image: url(img/3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,.15);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    padding: 20px;
+    position: relative; /* 🔥 importante */
 }
 
 .card h1{
-    font-size: 48px;
+    font-size: clamp(28px, 4vw, 48px);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .card p{
-    font-size: 24px;
-    margin-bottom: 50px;
+    font-size: clamp(16px, 2.5vw, 24px);
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.buttons{
-    display: flex;
-    gap: 30px;
-}
 
 button{
-    margin-top: 100px;
-    width: 150px;
-    height: 55px;
+    width: clamp(120px, 18vw, 160px);
+    height: clamp(40px, 6vh, 55px);
+
     border: none;
     border-radius: 10px;
-    font-size: 22px;
+
+    font-size: clamp(14px, 2vw, 18px);
+
     cursor: pointer;
     transition: .25s;
-    background-color:#e28e1c;
+
+    background-color: #80079e;
     color: white;
-    margin-top: 300px;
+
+    position: absolute;  /* 🔥 clave */
+    bottom: 20px;        /* 👈 lo pega abajo */
 }

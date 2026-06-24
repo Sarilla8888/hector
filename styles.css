@@ -6,25 +6,33 @@
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #ffffff;
+    overflow-x: hidden;
+    padding: 20px;
 }
-
 .card{
-    width: 925px;
-    height: 489px;
+    width: min(925px, 95vw);
+    aspect-ratio: 925 / 489;
+
     background-image: url(img/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,.15);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    padding: 20px;
 }
 
 .card h1{
@@ -38,8 +46,12 @@ body{
 }
 
 .buttons{
+    margin-top: auto;
+    padding-bottom: 20px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 button{
@@ -54,7 +66,7 @@ button{
 }
 
 .yes{
-    background: #e28e1c;
+    background: #80079e;
     color: rgb(255, 255, 255);
 }
 
